@@ -99,7 +99,7 @@ store bookmark remove ddg
 
 show path to the document:
 ```sh
-store bookmark location"
+store bookmark location
 ```
 
 ## Prior work
