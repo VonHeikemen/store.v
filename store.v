@@ -122,7 +122,14 @@ fn main() {
 		}
 	}
 
-	app.add_commands([create_cmd, query_cmd, list_cmd, add_cmd, update_cmd, remove_cmd, location_cmd,
+	app.add_commands([
+		create_cmd,
+		query_cmd,
+		list_cmd,
+		add_cmd,
+		update_cmd,
+		remove_cmd,
+		location_cmd,
 		version_cmd,
 	])
 	app.setup()
