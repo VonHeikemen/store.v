@@ -60,6 +60,7 @@ fn main() {
 		name: 'add'
 		description: 'creates a new entry in the document'
 		usage: '<entry> <value>'
+		required_args: 3
 		execute: fn (cmd cli.Command) ? {
 			add(cmd.args[0], cmd.args[1], cmd.args[2]) or {
 				eprintln(err)
@@ -74,6 +75,7 @@ fn main() {
 		name: 'update'
 		description: 'changes an entry in the document'
 		usage: '<entry> <value>'
+		required_args: 3
 		execute: fn (cmd cli.Command) ? {
 			old_value := update(cmd.args[0], cmd.args[1], cmd.args[2]) or {
 				eprintln(err)
