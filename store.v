@@ -2,7 +2,7 @@ import os
 import json
 import cli
 
-const version_num = 'v0.1.1'
+const version_num = 'v0.1.2'
 
 fn main() {
 	mut app := cli.Command{
