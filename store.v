@@ -15,8 +15,8 @@ fn main() {
 	query_cmd := cli.Command{
 		name: 'query'
 		description: 'Extract value from entry'
-		required_args: 2
 		usage: '<entry>'
+		required_args: 2
 		execute: fn (cmd cli.Command) ? {
 			value := query(cmd.args[0], cmd.args[1]) or {
 				eprintln(err)
@@ -30,8 +30,8 @@ fn main() {
 	create_cmd := cli.Command{
 		name: 'create'
 		description: "creates an empty json file in your 'data folder'"
-		required_args: 1
 		usage: ' '
+		required_args: 1
 		execute: fn (cmd cli.Command) ? {
 			create(cmd.args[0]) or {
 				eprintln(err)
@@ -46,6 +46,7 @@ fn main() {
 	list_cmd := cli.Command{
 		name: 'list'
 		description: 'show all entries of a document'
+		required_args: 1
 		execute: fn (cmd cli.Command) ? {
 			entries := list(cmd.args[0]) or {
 				eprintln(err)
@@ -92,6 +93,7 @@ fn main() {
 		name: 'remove'
 		description: 'deletes an entry from the document'
 		usage: '<entry>'
+		required_args: 2
 		execute: fn (cmd cli.Command) ? {
 			old_value := remove(cmd.args[0], cmd.args[1]) or {
 				eprintln(err)
@@ -106,6 +108,7 @@ fn main() {
 	location_cmd := cli.Command{
 		name: 'location'
 		description: 'show file path to the document'
+		required_args: 1
 		execute: fn (cmd cli.Command) ? {
 			path := get_document(cmd.args[0]) or {
 				eprintln(err)
