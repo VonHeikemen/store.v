@@ -47,6 +47,7 @@ fn main() {
 		name: 'list'
 		description: 'show all entries of a document'
 		required_args: 1
+		usage: ' '
 		execute: fn (cmd cli.Command) ? {
 			entries := list(cmd.args[0]) or {
 				eprintln(err)
@@ -108,6 +109,7 @@ fn main() {
 	location_cmd := cli.Command{
 		name: 'location'
 		description: 'show file path to the document'
+		usage: ' '
 		required_args: 1
 		execute: fn (cmd cli.Command) ? {
 			path := get_document(cmd.args[0]) or {
